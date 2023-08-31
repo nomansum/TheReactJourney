@@ -9,21 +9,23 @@ import "./index.css";
 //   );
 // }
 
-const firstBook = {
-  title: "Best selling book",
-  img: "./images/pic.jpg",
-  author: "Shibli Noman Sunny",
-};
-const secondBook = {
-  title: "Best selling book 2 ",
-  img: "./images/newpic.jpg",
-  author: "Mohammad Shibli Noman SUnny",
-};
-const thirdBook = {
-  title: "Best selling book 3 ",
-  img: "./images/newpic.jpg",
-  author: "Mohammad Shibli Noman SUnny",
-};
+const books = [
+  {
+    title: "Best selling book",
+    img: "./images/pic.jpg",
+    author: "Shibli Noman Sunny",
+  },
+  {
+    title: "Best selling book 2 ",
+    img: "./images/pic.jpg",
+    author: "Mohammad Shibli Noman SUnny",
+  },
+  {
+    title: "Best selling book 3 ",
+    img: "./images/pic.jpg",
+    author: "Mohammad Shibli Noman SUnny",
+  },
+];
 
 const inlineStyling = {
   color: "#617d98",
@@ -33,25 +35,11 @@ const inlineStyling = {
 const Booklist = () => {
   return (
     <section className="booklist">
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      >
-        <p>Lorem IPSUM</p>
-      </Book>
-
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      ></Book>
-
-      <Book
-        img={thirdBook.img}
-        title={thirdBook.title}
-        author={thirdBook.author}
-      ></Book>
+      {books.map((item) => {
+        return (
+          <Book img={item.img} title={item.title} author={item.author}></Book>
+        );
+      })}
     </section>
   );
 };
