@@ -14,16 +14,19 @@ const books = [
     title: "Best selling book",
     img: "./images/pic.jpg",
     author: "Shibli Noman Sunny",
+    id: 1,
   },
   {
     title: "Best selling book 2 ",
     img: "./images/pic.jpg",
     author: "Mohammad Shibli Noman SUnny",
+    id: 2,
   },
   {
     title: "Best selling book 3 ",
     img: "./images/pic.jpg",
     author: "Mohammad Shibli Noman SUnny",
+    id: 3,
   },
 ];
 
@@ -35,10 +38,9 @@ const inlineStyling = {
 const Booklist = () => {
   return (
     <section className="booklist">
-      {books.map((item) => {
-        return (
-          <Book img={item.img} title={item.title} author={item.author}></Book>
-        );
+      {books.map((book, index) => {
+        //const { img, title, author, id } = book;
+        return <Book {...book} key={book.id}></Book>;
       })}
     </section>
   );
