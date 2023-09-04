@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
+import {books} from "./books";
+import Book from './Book';
 // function Greeting() {
 //   return (
 //     <div>
@@ -9,26 +11,6 @@ import "./index.css";
 //   );
 // }
 
-const books = [
-  {
-    title: "Best selling book",
-    img: "./images/pic.jpg",
-    author: "Shibli Noman Sunny",
-    id: 1,
-  },
-  {
-    title: "Best selling book 2 ",
-    img: "./images/pic.jpg",
-    author: "Mohammad Shibli Noman SUnny",
-    id: 2,
-  },
-  {
-    title: "Best selling book 3 ",
-    img: "./images/pic.jpg",
-    author: "Mohammad Shibli Noman SUnny",
-    id: 3,
-  },
-];
 
 const inlineStyling = {
   color: "#617d98",
@@ -79,23 +61,7 @@ const Booklist = () => {
 //   </section>;
 // };
 
-const Book = (props) => {
-  //const title = "This is a good book";
-  const displayTitle=()=>{
-    console.log(props.title);
-  }
-  return (
-    <article className="book">
-      <img src={props.img} />
-      <h2>{props.title}</h2>
-      <h4 style={inlineStyling}>{props.author}</h4>
-      {props.children}
-      <button onClick={()=>{
-        props.getBook(props.id);
-      }}>Display Title</button>
-    </article>
-  );
-};
+
 
 const Image = () => {
   return <img src="./images/pic.jpg" />;
