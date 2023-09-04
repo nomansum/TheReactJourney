@@ -36,18 +36,18 @@ const inlineStyling = {
   marginTop: "0.5rem",
 };
 const Booklist = () => {
-
-  const someValue = "ShakeAndBake";
-  const displayValue = ()=>{
-    console.log(someValue);
+ 
+  const getBook = (id)=>{
+    const book = books.find((book)=>book.id === id);
+    console.log(book);
   }
-
+  
   return (
     <section className="booklist">
       {/* <EventExamples></EventExamples> */}
       {books.map((book, index) => {
         //const { img, title, author, id } = book;
-        return <Book {...book} key={book.id} displayValue = {displayValue}></Book>;
+        return <Book {...book} key={book.id} getBook = {getBook}></Book>;
       })}
     </section>
   );
@@ -90,7 +90,9 @@ const Book = (props) => {
       <h2>{props.title}</h2>
       <h4 style={inlineStyling}>{props.author}</h4>
       {props.children}
-      <button onClick={props.displayValue}>Display Title</button>
+      <button onClick={()=>{
+        props.getBook(props.id);
+      }}>Display Title</button>
     </article>
   );
 };
